@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    background-color: #555;
+    font-family: "Courier New";
+    color: white;
+    user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    font-size: 3em;
+    font-family: Monaco;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.win {
+    background-image: linear-gradient(to right, white, cyan, rgb(111, 218, 253), pink, yellow);
+    background-clip: text;
+    color: transparent;
+    background-size: 300% 100%;
+    animation: win 0.75s linear infinite alternate-reverse;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+    width: 30em;
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #222;
+    color: #eee;
+    box-shadow: 0 0 10px 3px #111;
 }
 
-.App-link {
-  color: #61dafb;
+.playerX {
+    color: rgb(255, 154, 126);
+    text-shadow: 0 0 30px orange;
+    line-height: 0.95em !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.playerO {
+    font-size: 11.5em !important;
+    color: rgb(100, 245, 245);
+    text-shadow: 0 0 30px rgb(152, 250, 255);
+}
+
+.container div {
+    text-align: center;
+    font-size: 12em;
+    height: 10rem;
+    border: 1px solid #777;
+    line-height: 0.8em;
+}
+
+.container>div:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+@keyframes win {
+    from {
+        background-position: left;
+    }
+
+    to {
+        background-position: right;
+        scale: 1.1;
+    }
 }
