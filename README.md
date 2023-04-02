@@ -1,1 +1,2 @@
  SIMPLE 'TIC-TAC-TOE' GAME BUILT USING 'REACT'.
+![X](./src/X.png)
